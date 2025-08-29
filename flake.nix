@@ -21,7 +21,7 @@
       savefile_directory  = "$BASE/saves"
       system_directory    = "$BASE/system"
       core_info_directory = "${pkgs.libretro-core-info}/share/libretro/info"
-      EOF
+EOF
 
       exec ${retroWithFceumm}/bin/retroarch -L "$CORE" --config "$CFG" "$@"
     '';
@@ -31,13 +31,16 @@
       buildInputs = [
         py
         py.pkgs.venvShellHook
+
+        # ML libraries
+        pkgs.python312Packages.dm-haiku
+        pkgs.python312Packages.optax
         
         pkgs.zlib
 
+        # for generating the initial save state / interactive play
         fceummRunner
         pkgs.libretro-core-info
-
-        # for generating the initial save state / interactive play
         pkgs.xorg.libX11
         pkgs.libGL
         pkgs.mesa

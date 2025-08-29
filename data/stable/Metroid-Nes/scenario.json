@@ -2,8 +2,7 @@
   "reward": [],
   "done": [],
   "actions": [
-    [[], ["UP"], ["DOWN"]],
-    [[], ["LEFT"], ["RIGHT"]],
-    [[], ["A"], ["B"], ["START"]]
+    [[], ["UP"], ["DOWN"], ["LEFT"], ["RIGHT"]],
+    [[], ["A"], ["B"], ["START"], ["SELECT"]]
   ]
 }
