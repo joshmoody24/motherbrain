@@ -2,3 +2,4 @@
 *.lpl
 *.retro*
 .venv/
+*.pyc

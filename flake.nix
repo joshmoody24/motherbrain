@@ -61,13 +61,14 @@ EOF
       postVenvCreation = ''
         pip install --upgrade pip
         pip install stable-retro
+        pip install dreamerv3
       '';
       postShellHook = ''
         export RETRO_DATA_PATH=$PWD/data
         echo "Python environment ready"
         echo $RETRO_DATA_PATH
-        ls $RETRO_DATA_PATH/Metroid-Nes
-        cat $RETRO_DATA_PATH/Metroid-Nes/rom.sha
+        ls $RETRO_DATA_PATH/stable/Metroid-Nes
+        cat $RETRO_DATA_PATH/stable/Metroid-Nes/rom.sha
       '';
     };
   };
