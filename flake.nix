@@ -32,10 +32,6 @@ EOF
         py
         py.pkgs.venvShellHook
 
-        # ML libraries
-        pkgs.python312Packages.dm-haiku
-        pkgs.python312Packages.optax
-        
         pkgs.zlib
 
         # for generating the initial save state / interactive play
@@ -61,7 +57,7 @@ EOF
       postVenvCreation = ''
         pip install --upgrade pip
         pip install stable-retro
-        pip install dreamerv3
+        pip install -r dreamerv3/requirements.txt
       '';
       postShellHook = ''
         export RETRO_DATA_PATH=$PWD/data
